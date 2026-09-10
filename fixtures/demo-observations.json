@@ -1,0 +1,751 @@
+{
+  "demoOnly": true,
+  "physicalTestsConducted": false,
+  "instrument": {
+    "model": "DEMO-30",
+    "manufacturer": "Example Weighing Systems Pvt Ltd - fictional",
+    "applicant": "Example Instruments Research - fictional",
+    "laboratory": "Demonstration Metrology Laboratory, Hyderabad - fictional",
+    "sampleIdentifier": "DEMO-SAMPLE-001",
+    "serialNumber": "DEMO-NAWI-0001",
+    "accuracyClass": "III",
+    "maxG": "30000",
+    "minG": "200",
+    "eG": "10",
+    "dG": "10",
+    "rangeType": "SINGLE_INTERVAL",
+    "supportPoints": 1,
+    "receptor": "ORDINARY_PLATFORM",
+    "maximumAdditiveTareG": "0",
+    "initialZeroSettingRangePercent": "4",
+    "automaticZeroSettingExists": false,
+    "zeroTrackingExists": true,
+    "declaredTemperatureMinC": "-10",
+    "declaredTemperatureMaxC": "40",
+    "featuresNote": "Fictional declarations for one scoped demonstration. No claim of complete conformity."
+  },
+  "weighing": {
+    "zeroReference": {
+      "loadG": "0",
+      "indicationG": "0",
+      "additionalLoadG": "4"
+    },
+    "beforeAndAfterZeroReadings": [
+      {
+        "loadG": "0",
+        "indicationG": "0",
+        "additionalLoadG": "4"
+      },
+      {
+        "loadG": "0",
+        "indicationG": "0",
+        "additionalLoadG": "4"
+      }
+    ],
+    "rows": [
+      {
+        "direction": "INCREASING",
+        "loadG": "200",
+        "indicationG": "200",
+        "additionalLoadG": "3",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "2",
+          "correctedErrorG": "1",
+          "mpeG": "5",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "1000",
+        "indicationG": "1000",
+        "additionalLoadG": "4",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "1",
+          "correctedErrorG": "0",
+          "mpeG": "5",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "2500",
+        "indicationG": "2500",
+        "additionalLoadG": "5",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "0",
+          "correctedErrorG": "-1",
+          "mpeG": "5",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "5000",
+        "indicationG": "5000",
+        "additionalLoadG": "6",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "-1",
+          "correctedErrorG": "-2",
+          "mpeG": "5",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "5010",
+        "indicationG": "5010",
+        "additionalLoadG": "3",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "2",
+          "correctedErrorG": "1",
+          "mpeG": "10",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "10000",
+        "indicationG": "10000",
+        "additionalLoadG": "4",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "1",
+          "correctedErrorG": "0",
+          "mpeG": "10",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "15000",
+        "indicationG": "15000",
+        "additionalLoadG": "5",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "0",
+          "correctedErrorG": "-1",
+          "mpeG": "10",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "20000",
+        "indicationG": "20000",
+        "additionalLoadG": "6",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "-1",
+          "correctedErrorG": "-2",
+          "mpeG": "10",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "20010",
+        "indicationG": "20010",
+        "additionalLoadG": "3",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "2",
+          "correctedErrorG": "1",
+          "mpeG": "15",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "25000",
+        "indicationG": "25000",
+        "additionalLoadG": "4",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "1",
+          "correctedErrorG": "0",
+          "mpeG": "15",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "INCREASING",
+        "loadG": "30000",
+        "indicationG": "30000",
+        "additionalLoadG": "5",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "0",
+          "correctedErrorG": "-1",
+          "mpeG": "15",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "30000",
+        "indicationG": "30000",
+        "additionalLoadG": "3",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "2",
+          "correctedErrorG": "1",
+          "mpeG": "15",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "25000",
+        "indicationG": "25000",
+        "additionalLoadG": "4",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "1",
+          "correctedErrorG": "0",
+          "mpeG": "15",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "20010",
+        "indicationG": "20010",
+        "additionalLoadG": "5",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "0",
+          "correctedErrorG": "-1",
+          "mpeG": "15",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "20000",
+        "indicationG": "20000",
+        "additionalLoadG": "6",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "-1",
+          "correctedErrorG": "-2",
+          "mpeG": "10",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "15000",
+        "indicationG": "15000",
+        "additionalLoadG": "3",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "2",
+          "correctedErrorG": "1",
+          "mpeG": "10",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "10000",
+        "indicationG": "10000",
+        "additionalLoadG": "4",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "1",
+          "correctedErrorG": "0",
+          "mpeG": "10",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "5010",
+        "indicationG": "5010",
+        "additionalLoadG": "5",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "0",
+          "correctedErrorG": "-1",
+          "mpeG": "10",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "5000",
+        "indicationG": "5000",
+        "additionalLoadG": "6",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "-1",
+          "correctedErrorG": "-2",
+          "mpeG": "5",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "2500",
+        "indicationG": "2500",
+        "additionalLoadG": "3",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "2",
+          "correctedErrorG": "1",
+          "mpeG": "5",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "1000",
+        "indicationG": "1000",
+        "additionalLoadG": "4",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "1",
+          "correctedErrorG": "0",
+          "mpeG": "5",
+          "outcome": "PASS"
+        }
+      },
+      {
+        "direction": "DECREASING",
+        "loadG": "200",
+        "indicationG": "200",
+        "additionalLoadG": "5",
+        "zeroReferenceId": "zero-demo",
+        "expected": {
+          "errorG": "0",
+          "correctedErrorG": "-1",
+          "mpeG": "5",
+          "outcome": "PASS"
+        }
+      }
+    ],
+    "note": "Add actual procedure flags, observer/timestamps and equipment IDs at seeding. Values are fictional, not measurements. Zero rows are separately captured. Max is included in both direction columns."
+  },
+  "eccentricity": {
+    "loadG": "10000",
+    "rows": [
+      {
+        "segment": 1,
+        "loadG": "10000",
+        "indicationG": "10000",
+        "additionalLoadG": "3",
+        "zeroReference": {
+          "loadG": "0",
+          "indicationG": "0",
+          "additionalLoadG": "4"
+        },
+        "expectedCorrectedErrorG": "1",
+        "expectedMpeG": "10",
+        "expectedOutcome": "PASS"
+      },
+      {
+        "segment": 2,
+        "loadG": "10000",
+        "indicationG": "10000",
+        "additionalLoadG": "4",
+        "zeroReference": {
+          "loadG": "0",
+          "indicationG": "0",
+          "additionalLoadG": "4"
+        },
+        "expectedCorrectedErrorG": "0",
+        "expectedMpeG": "10",
+        "expectedOutcome": "PASS"
+      },
+      {
+        "segment": 3,
+        "loadG": "10000",
+        "indicationG": "10000",
+        "additionalLoadG": "5",
+        "zeroReference": {
+          "loadG": "0",
+          "indicationG": "0",
+          "additionalLoadG": "4"
+        },
+        "expectedCorrectedErrorG": "-1",
+        "expectedMpeG": "10",
+        "expectedOutcome": "PASS"
+      },
+      {
+        "segment": 4,
+        "loadG": "10000",
+        "indicationG": "10000",
+        "additionalLoadG": "6",
+        "zeroReference": {
+          "loadG": "0",
+          "indicationG": "0",
+          "additionalLoadG": "4"
+        },
+        "expectedCorrectedErrorG": "-2",
+        "expectedMpeG": "10",
+        "expectedOutcome": "PASS"
+      }
+    ]
+  },
+  "repeatability": [
+    {
+      "loadG": "15000",
+      "rows": [
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "3",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "2"
+        },
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "4",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "1"
+        },
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "5",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "0"
+        },
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "6",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "-1"
+        },
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "7",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "-2"
+        },
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "3",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "2"
+        },
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "4",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "1"
+        },
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "5",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "0"
+        },
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "6",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "-1"
+        },
+        {
+          "loadG": "15000",
+          "indicationG": "15000",
+          "additionalLoadG": "7",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "-2"
+        }
+      ],
+      "expectedSpreadG": "4",
+      "expectedMpeG": "10",
+      "expectedOutcome": "PASS"
+    },
+    {
+      "loadG": "30000",
+      "rows": [
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "3",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "2"
+        },
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "4",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "1"
+        },
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "5",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "0"
+        },
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "6",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "-1"
+        },
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "7",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "-2"
+        },
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "3",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "2"
+        },
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "4",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "1"
+        },
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "5",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "0"
+        },
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "6",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "-1"
+        },
+        {
+          "loadG": "30000",
+          "indicationG": "30000",
+          "additionalLoadG": "7",
+          "unloadedIndicationG": "0",
+          "zeroResetPerformed": false,
+          "expectedErrorG": "-2"
+        }
+      ],
+      "expectedSpreadG": "4",
+      "expectedMpeG": "15",
+      "expectedOutcome": "PASS"
+    }
+  ],
+  "goldenCases": [
+    {
+      "id": "source-example-A4443",
+      "source": "R76-1 p89 A.4.4.3 (official arithmetic example)",
+      "eG": "5",
+      "loadG": "1000",
+      "indicationG": "1000",
+      "additionalLoadG": "1.5",
+      "zeroErrorG": "0.5",
+      "expectedErrorG": "1",
+      "expectedCorrectedErrorG": "0.5"
+    },
+    {
+      "id": "demo-row-pass",
+      "eG": "10",
+      "loadG": "10000",
+      "indicationG": "10000",
+      "additionalLoadG": "3",
+      "zeroErrorG": "1",
+      "expectedCorrectedErrorG": "1",
+      "expectedMpeG": "10",
+      "outcome": "PASS"
+    },
+    {
+      "id": "demo-row-positive-boundary",
+      "eG": "10",
+      "loadG": "10000",
+      "indicationG": "10010",
+      "additionalLoadG": "4",
+      "zeroErrorG": "1",
+      "expectedCorrectedErrorG": "10",
+      "expectedMpeG": "10",
+      "outcome": "PASS"
+    },
+    {
+      "id": "demo-row-negative-boundary",
+      "eG": "10",
+      "loadG": "10000",
+      "indicationG": "9990",
+      "additionalLoadG": "4",
+      "zeroErrorG": "1",
+      "expectedCorrectedErrorG": "-10",
+      "expectedMpeG": "10",
+      "outcome": "PASS"
+    },
+    {
+      "id": "demo-row-fail",
+      "eG": "10",
+      "loadG": "10000",
+      "indicationG": "10020",
+      "additionalLoadG": "3",
+      "zeroErrorG": "1",
+      "expectedCorrectedErrorG": "21",
+      "expectedMpeG": "10",
+      "outcome": "FAIL"
+    },
+    {
+      "id": "mpe-500e-boundary",
+      "loadG": "5000",
+      "eG": "10",
+      "expectedMpeG": "5"
+    },
+    {
+      "id": "mpe-just-over-500e",
+      "loadG": "5000.1",
+      "eG": "10",
+      "expectedMpeG": "10"
+    },
+    {
+      "id": "mpe-2000e-boundary",
+      "loadG": "20000",
+      "eG": "10",
+      "expectedMpeG": "10"
+    },
+    {
+      "id": "mpe-just-over-2000e",
+      "loadG": "20000.1",
+      "eG": "10",
+      "expectedMpeG": "15"
+    },
+    {
+      "id": "repeat-spread-boundary",
+      "seriesLoadG": "15000",
+      "errorsG": [
+        "5",
+        "-5",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expectedSpreadG": "10",
+      "expectedMpeG": "10",
+      "outcome": "PASS"
+    },
+    {
+      "id": "repeat-spread-only-fail",
+      "seriesLoadG": "15000",
+      "errorsG": [
+        "6",
+        "-5",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expectedSpreadG": "11",
+      "expectedMpeG": "10",
+      "outcome": "FAIL"
+    },
+    {
+      "id": "repeat-individual-only-fail",
+      "seriesLoadG": "15000",
+      "errorsG": [
+        "11",
+        "11",
+        "11",
+        "11",
+        "11",
+        "11",
+        "11",
+        "11",
+        "11",
+        "11"
+      ],
+      "expectedSpreadG": "0",
+      "expectedMpeG": "10",
+      "outcome": "FAIL"
+    },
+    {
+      "id": "repeat-negative-individual-fail",
+      "seriesLoadG": "15000",
+      "errorsG": [
+        "-11",
+        "-11",
+        "-11",
+        "-11",
+        "-11",
+        "-11",
+        "-11",
+        "-11",
+        "-11",
+        "-11"
+      ],
+      "expectedSpreadG": "0",
+      "expectedMpeG": "10",
+      "outcome": "FAIL"
+    },
+    {
+      "id": "missing-repeat",
+      "case": "One series has 9 loaded observations rather than 10",
+      "outcome": "INCOMPLETE"
+    },
+    {
+      "id": "wrong-zero-tracking-state",
+      "case": "Zero tracking still active for eccentricity",
+      "outcome": "INVALID"
+    },
+    {
+      "id": "unsupported-range",
+      "case": "Input says MULTI_INTERVAL",
+      "outcome": "NOT_SUPPORTED"
+    },
+    {
+      "id": "missing-authoritative-rule",
+      "case": "A required rule lacks a verified primary reference",
+      "outcome": "NOT_VERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+import { signIn } from "@/server/auth/actions";
+
+export default async function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+  const { error } = await searchParams;
+  const message = error === "config" ? "Authentication is not configured for this environment." : error === "invalid" ? "Sign-in failed. Check your email and password." : null;
+  return <main className="min-h-screen bg-slate-50 px-4 py-16 text-slate-900"><section className="mx-auto max-w-md rounded-lg border border-slate-200 bg-white p-8 shadow-sm"><p className="text-sm font-semibold uppercase tracking-wide text-[#176B67]">SIH26035 Prototype</p><h1 className="mt-2 text-2xl font-bold text-[#183153]">NAWI Lab sign in</h1><p className="mt-2 text-sm text-slate-600">Use an authorized laboratory account to continue.</p>{message ? <p className="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900" role="alert">{message}</p> : null}<form action={signIn} className="mt-6 space-y-4"><label className="block text-sm font-medium">Email<input name="email" type="email" autoComplete="email" required className="mt-1 block w-full rounded border border-slate-300 px-3 py-2" /></label><label className="block text-sm font-medium">Password<input name="password" type="password" autoComplete="current-password" required className="mt-1 block w-full rounded border border-slate-300 px-3 py-2" /></label><button type="submit" className="w-full rounded bg-[#183153] px-4 py-2 font-semibold text-white">Sign in</button></form></section></main>;
+}

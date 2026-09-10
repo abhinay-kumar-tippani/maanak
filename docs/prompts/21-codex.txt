@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 21: Private storage and final issuance
+ALLOWED PATHS: src/server/reports/issue.ts; src/server/storage/*; src/server/actions/reports.ts; supabase/migrations/202609090011_issuance.sql; tests/integration/issuance.test.ts
+TASK: Implement reserve/render/upload/finish flow in security contract. Preserve an immutable FINAL snapshot derived from approved submission; store actual PDF SHA-256 and size. Unique reservation per version/format; upsert:false; retry reuses reservation. Return a download URL after authorization; do not return a large buffer through Vercel. No ISSUED state on render/upload/DB failure. Evidence upload is separately size/MIME-checked and private.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Save PDF reliably and mark it issued only after success.
+ACCEPTANCE: Upload failure stays APPROVED/FAILED artifact with Retry; retry issues once; original bytes never overwritten; unauthorized download fails.
+STOP CONDITION: Final PDF is READY in private repository; ISSUED audit is accurate.

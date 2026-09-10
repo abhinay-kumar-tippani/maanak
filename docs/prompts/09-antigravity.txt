@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 9: Application shell and dashboard
+ALLOWED PATHS: src/components/layout/*; src/components/status/*; src/features/dashboard/components/*; src/app/(lab)/dashboard/page.tsx; src/app/(lab)/layout.tsx
+TASK: Implement sidebar, breadcrumbs, compact metric cards and recent activity using server-provided props. Metrics: evaluations in progress, awaiting review, approved-for-issue, issued PDFs and failed current test results. Empty state is zero, not seeded fiction. Use separate status components for workflow/coverage/outcome. Do not calculate metrics by downloading all observations to the browser. Create no links to absent pages; wire navigation as pages become available.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Create professional navigation and live dashboard views.
+ACCEPTANCE: Counts reconcile with authorized database queries; keyboard navigation and empty state work.
+STOP CONDITION: Readable desktop layout; real metrics; accurate status language.

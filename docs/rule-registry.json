@@ -1,0 +1,515 @@
+{
+  "ruleSetId": "r76-2006-2007-demo-classiii-v1",
+  "scope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL.",
+  "unverifiedLiteral": "NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE",
+  "rules": [
+    {
+      "ruleId": "R76-CLASS-III-LARGE-E",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Check declared class III against the e>=5 g Table 3 branch; not a complete classification/conformity decision.",
+      "inputs": [
+        "Max",
+        "Min",
+        "e",
+        "d",
+        "declared class",
+        "range and feature flags"
+      ],
+      "calculation": "n = Max/e",
+      "expectedCondition": "e>=5 g; 500<=n<=10000; Min>=20e; e=d for graduated instrument without auxiliary device",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "3.1.2; 3.2",
+          "printedPages": [
+            26,
+            27
+          ],
+          "pdfPages": [
+            26,
+            27
+          ],
+          "tableOrForm": "Tables 2 and 3"
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-INTERVAL-FORM",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Allowed scale-interval form for weighing results.",
+      "inputs": [
+        "d",
+        "mass unit"
+      ],
+      "calculation": "d = a * 10^k in the declared mass unit",
+      "expectedCondition": "a in {1,2,5}; k integral",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "4.2.2.1",
+          "printedPages": [
+            43
+          ],
+          "pdfPages": [
+            43
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-MPE-III",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Absolute permissible error for the selected class III evaluation tests.",
+      "inputs": [
+        "load L",
+        "e",
+        "Max"
+      ],
+      "calculation": "q=L/e; MPE = 0.5e if 0<=q<=500; 1e if 500<q<=2000; 1.5e if 2000<q<=10000",
+      "expectedCondition": "Use inclusive upper bounds exactly. Reject L<0 or L>Max as invalid for this scoped plan. Do not apply in-service doubling.",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "3.5.1; 3.10.1",
+          "printedPages": [
+            30,
+            36
+          ],
+          "pdfPages": [
+            30,
+            36
+          ],
+          "tableOrForm": "Table 6"
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-CHANGEOVER",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Calculate prior-to-rounding indication and error.",
+      "inputs": [
+        "L",
+        "I",
+        "e",
+        "additional load deltaL",
+        "confirmation of changeover"
+      ],
+      "calculation": "P=I+e/2-deltaL; E=P-L",
+      "expectedCondition": "All mass quantities in the same unit; use decimal arithmetic, not binary floating point; actual observed deltaL, no invented default",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "3.5.3.2; A.4.4.3",
+          "printedPages": [
+            30,
+            88,
+            89
+          ],
+          "pdfPages": [
+            30,
+            88,
+            89
+          ],
+          "tableOrForm": null
+        },
+        {
+          "documentId": "r76-2",
+          "standard": "OIML R 76-2",
+          "edition": "2007",
+          "documentSha256": "650b8ea9b1001499574f585f0eab0a097ba290118da312b6a05a17bc856a3820",
+          "clause": "Explanatory notes; 1",
+          "printedPages": [
+            5,
+            10
+          ],
+          "pdfPages": [
+            5,
+            10
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-ZERO-CORRECTION",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Zero-correct weighing and eccentricity errors.",
+      "inputs": [
+        "E",
+        "raw zero or near-zero reference L0 I0 deltaL0",
+        "e"
+      ],
+      "calculation": "E0=I0+e/2-deltaL0-L0; Ec=E-E0",
+      "expectedCondition": "abs(Ec)<=MPE for the load; preserve zero-reference identity; no default E0=0",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "A.4.4.3",
+          "printedPages": [
+            89
+          ],
+          "pdfPages": [
+            89
+          ],
+          "tableOrForm": null
+        },
+        {
+          "documentId": "r76-2",
+          "standard": "OIML R 76-2",
+          "edition": "2007",
+          "documentSha256": "650b8ea9b1001499574f585f0eab0a097ba290118da312b6a05a17bc856a3820",
+          "clause": "1; 3.1",
+          "printedPages": [
+            10,
+            12
+          ],
+          "pdfPages": [
+            10,
+            12
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-INITIAL-WEIGHING-PLAN",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Initial intrinsic error test loading requirements.",
+      "inputs": [
+        "Max",
+        "Min",
+        "e",
+        "initial-zero-setting range"
+      ],
+      "calculation": "Generate >=10 distinct positive test loads for this demo as a conservative implementation of the at-least-10-load requirement, include Min/Max and points at or near MPE changes; add zero before and after",
+      "expectedCondition": "Increase progressively to Max and decrease to zero. Min is included when Min>=100 mg. Manufacturer initial-zero range >20% Max requires a supplementary test, unsupported in P0.",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "A.4.4.1; A.4.4.2",
+          "printedPages": [
+            88
+          ],
+          "pdfPages": [
+            88
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-ECCENTRIC-LOAD",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Eccentricity load for ordinary receptor with at most four supports.",
+      "inputs": [
+        "Max",
+        "maximum additive tare effect",
+        "receptor/support information"
+      ],
+      "calculation": "L=(Max+maximum additive tare effect)/3",
+      "expectedCondition": "P0 additive effect is declared 0, not silently presumed. Special, rolling and >4-support receptors are NOT_SUPPORTED.",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "3.6.2; 3.6.2.1",
+          "printedPages": [
+            31
+          ],
+          "pdfPages": [
+            31
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-ECCENTRIC-POSITIONS",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Four-segment eccentricity procedure and evaluation.",
+      "inputs": [
+        "4 positions",
+        "sketch/display location",
+        "per-position zero reference",
+        "L I deltaL",
+        "device state"
+      ],
+      "calculation": "Calculate E and Ec for each position, then compare abs(Ec) with MPE",
+      "expectedCondition": "Load four quarter segments in turn; mark positions on sketch; automatic zero-setting and zero-tracking not in operation. P0 captures zero before each position, as in R76-2 form; all four must pass.",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "A.4.7; A.4.7.1",
+          "printedPages": [
+            90,
+            91
+          ],
+          "pdfPages": [
+            90,
+            91
+          ],
+          "tableOrForm": null
+        },
+        {
+          "documentId": "r76-2",
+          "standard": "OIML R 76-2",
+          "edition": "2007",
+          "documentSha256": "650b8ea9b1001499574f585f0eab0a097ba290118da312b6a05a17bc856a3820",
+          "clause": "3.1",
+          "printedPages": [
+            12
+          ],
+          "pdfPages": [
+            12
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-REPEATABILITY-SERIES",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Type-evaluation repeatability series and repetitions.",
+      "inputs": [
+        "Max",
+        "load choices",
+        "loaded/unloaded readings",
+        "zero reset/device state"
+      ],
+      "calculation": "Two series, about 50% Max and close to 100% Max; 10 readings in each when Max<1000 kg; otherwise at least 3",
+      "expectedCondition": "P0 Max<1000 kg. Demo chooses exactly 0.5Max and Max; these exact choices are ours, not universal mandated loads. Record unload readings; reset if zero deviates; automatic zero/tracking in operation if present.",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "A.4.10",
+          "printedPages": [
+            93
+          ],
+          "pdfPages": [
+            93
+          ],
+          "tableOrForm": null
+        },
+        {
+          "documentId": "r76-2",
+          "standard": "OIML R 76-2",
+          "edition": "2007",
+          "documentSha256": "650b8ea9b1001499574f585f0eab0a097ba290118da312b6a05a17bc856a3820",
+          "clause": "5",
+          "printedPages": [
+            16
+          ],
+          "pdfPages": [
+            16
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-REPEATABILITY-LIMITS",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "AUTOMATE",
+      "description": "Evaluate individual errors AND spread at each repeatability load.",
+      "inputs": [
+        "L",
+        "e",
+        "I and deltaL for each repeat"
+      ],
+      "calculation": "E_i=I_i+e/2-deltaL_i-L; spread=max(E_i)-min(E_i)",
+      "expectedCondition": "abs(E_i)<=MPE for EVERY reading AND spread<=MPE in EACH series. Do not zero-correct each repeat by arbitrary per-reading offsets.",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "3.6; 3.6.1",
+          "printedPages": [
+            31
+          ],
+          "pdfPages": [
+            31
+          ],
+          "tableOrForm": null
+        },
+        {
+          "documentId": "r76-2",
+          "standard": "OIML R 76-2",
+          "edition": "2007",
+          "documentSha256": "650b8ea9b1001499574f585f0eab0a097ba290118da312b6a05a17bc856a3820",
+          "clause": "5",
+          "printedPages": [
+            16
+          ],
+          "pdfPages": [
+            16
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-GENERAL-CONDITIONS",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "MANUAL_CHECKLIST_P0",
+      "description": "Test setup and environmental conditions.",
+      "inputs": [
+        "temperatures/times",
+        "declared temperature range",
+        "power state",
+        "leveling",
+        "preload",
+        "adjustment/recovery records"
+      ],
+      "calculation": "Steady temperature: extreme difference<=min(one fifth of declared temperature span,5 C); rate<=5 C/hour for these selected tests",
+      "expectedCondition": "Monitor and record conditions; do not assert continuously steady temperature from only two endpoint readings; require tester confirmation. Preload once to Max or Lim before weighing tests with stated exceptions. Follow test-specific zero/tracking requirements.",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "A.4.1.1-A.4.1.11",
+          "printedPages": [
+            85,
+            86
+          ],
+          "pdfPages": [
+            85,
+            86
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    },
+    {
+      "ruleId": "R76-TEST-EQUIPMENT",
+      "ruleVersion": "1",
+      "verificationStatus": "VERIFIED_SCOPED",
+      "implementationStatus": "SPECIFICATION_ONLY",
+      "automation": "MANUAL_CHECKLIST_P0",
+      "description": "Record standards and equipment traceability.",
+      "inputs": [
+        "equipment names/types/IDs",
+        "calibration/reference evidence"
+      ],
+      "calculation": "No R111-class inference from the supplied R76 alone",
+      "expectedCondition": "R76-1 3.7.1 references R111 and gives a 1/3-MPE test-standard condition with an E2-or-better uncertainty alternative. Capture evidence/manual suitability confirmation; full R111 validation NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE.",
+      "result": null,
+      "references": [
+        {
+          "documentId": "r76-1",
+          "standard": "OIML R 76-1",
+          "edition": "2006",
+          "documentSha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+          "clause": "3.7.1",
+          "printedPages": [
+            32
+          ],
+          "pdfPages": [
+            32
+          ],
+          "tableOrForm": null
+        },
+        {
+          "documentId": "r76-2",
+          "standard": "OIML R 76-2",
+          "edition": "2007",
+          "documentSha256": "650b8ea9b1001499574f585f0eab0a097ba290118da312b6a05a17bc856a3820",
+          "clause": "Introduction; equipment information",
+          "printedPages": [
+            4,
+            8
+          ],
+          "pdfPages": [
+            4,
+            8
+          ],
+          "tableOrForm": null
+        }
+      ],
+      "supportedScope": "P0: complete, digital, class III, single-interval, no auxiliary indication, e=d, e>=5 g; ordinary non-grading platform; no additive tare; no smaller-resolution test mode. Unsupported features block this rule pack; they are not a metrological FAIL."
+    }
+  ]
+}

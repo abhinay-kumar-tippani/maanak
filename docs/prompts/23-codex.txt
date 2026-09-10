@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 23: Demo fixtures
+ALLOWED PATHS: scripts/seed-demo.mjs; fixtures/demo-observations.json; tests/fixtures/*
+TASK: Use fixture input only, passing through the same validated services/commands and rules as the application. Do not insert prewritten PASS/FAIL as authoritative results or fabricate official signatures. Seed fictional equipment/reference documents labelled demo; include unloaded readings, conditions, zero-tracking states and sketch evidence. Create one blank registration target and one prepared testing evaluation for rehearsal. Seed must be idempotent and refuse non-demo labs; no destructive reset.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Seed a reproducible fictional demonstration.
+ACCEPTANCE: Seed rerun creates no duplicates; results recomputed match fixtures; report says no physical tests performed.
+STOP CONDITION: Ready demo data and a recoverable backup exist with honest labels.

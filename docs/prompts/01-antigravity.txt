@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 1: Project initialization
+ALLOWED PATHS: src/app/layout.tsx; src/app/globals.css; src/app/page.tsx; src/app/(lab)/layout.tsx; src/app/(lab)/dashboard/page.tsx
+TASK: Implement only a restrained starter shell for NAWI Lab. Root redirects to /dashboard. Add a server-rendered dashboard with heading, SIH26035 prototype label and honest empty state. Use a system font, navy #183153, muted teal #176B67, white cards, slate borders and readable type. Preserve Tailwind setup. No authentication mock, fake role selector, sample verdict, fake count, formulas or Supabase call. No dead action buttons. Keep all configuration and package versions unchanged.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Create a buildable Next.js foundation.
+ACCEPTANCE: Run npm run build and npx tsc --noEmit; open /dashboard and refresh it.
+STOP CONDITION: Build exits 0; dashboard renders; no fake data; changed files remain within allowlist.

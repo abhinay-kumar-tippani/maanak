@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 17: Snapshot and submission
+ALLOWED PATHS: src/server/reports/snapshot.ts; src/server/actions/submission.ts; supabase/migrations/202609090009_submission.sql; tests/integration/submission.test.ts
+TASK: Build snapshot of lab/applicant/manufacturer/specifications, plan, observations/results, conditions, equipment/evidence hashes, source editions, engine version and coverage. In one RPC recheck expected versions and readiness, allocate report/version under lock, store snapshot/hash and UNDER_REVIEW with audit. No pending uploads. Hash canonical JSON consistently; never hash a signed URL.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Freeze the report data that an approver will review.
+ACCEPTANCE: Saved v1 remains identical after party master edits; simultaneous submit has one current submission; post-submit raw edits blocked.
+STOP CONDITION: Submitted version and digest are frozen; reviewer sees exactly that version.

@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 6: Server-side authentication
+ALLOWED PATHS: src/lib/supabase/browser.ts; src/lib/supabase/server.ts; src/lib/supabase/proxy.ts; src/proxy.ts; src/server/auth/*; src/app/(auth)/login/*; src/app/(lab)/layout.tsx
+TASK: Follow the current installed Next.js and Supabase SSR APIs. Use cookie-scoped clients and proxy session refresh. Validate identity with getClaims for page access and getUser for sensitive mutations; never trust getSession user alone. Fetch active role from profiles. Make /login functional and logout revoke local session. Fail with a friendly missing-configuration/profile message. Do not add a demo role switch or unauthenticated app-data fallback.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Implement login, logout and authenticated routing.
+ACCEPTANCE: Tester logs in; refresh preserves session; logout returns to /login; copied protected URL while logged out redirects.
+STOP CONDITION: Both accounts authenticate; protected routes are server-checked; no secrets in client bundle.

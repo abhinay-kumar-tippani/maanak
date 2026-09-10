@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 18: Approval queue and review UI
+ALLOWED PATHS: src/features/approvals/components/*; src/app/(lab)/approvals/*; src/app/(lab)/instruments/[id]/report/page.tsx
+TASK: Build queue and full review screen with immutable submission snapshot: identification, 3/3 selected coverage, failed rows, calculations, rule references, remarks, attachment links, version/hash and report preview. No editable observation fields. Approve Report for Issue, Request Correction, Reject Submission call existing typed actions; until implemented keep decisions unavailable rather than fake success.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Expose submitted evidence and decision controls.
+ACCEPTANCE: Approver can inspect each input, limit and source; tester navigation hides review controls and server denies queue access.
+STOP CONDITION: Review is read-only evidence display; decisions target explicit version/hash.

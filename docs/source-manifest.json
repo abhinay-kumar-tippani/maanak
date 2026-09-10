@@ -1,0 +1,43 @@
+{
+  "reviewScope": "Source structure reviewed; selected MVP clauses and report fields verified. This is not an exhaustive legal or metrological validation of every clause.",
+  "sources": [
+    {
+      "id": "r76-1",
+      "uploadedName": "r076-1-e06(1).pdf",
+      "path": "docs/reference/r076-1-e06.pdf",
+      "sha256": "06d9674f4f557ea053482960472db560aaedcc7665e6dabb4b4012333f3e068b",
+      "pdfPages": 144,
+      "authority": "PRIMARY_SUPPLIED_DOCUMENT"
+    },
+    {
+      "id": "swot",
+      "uploadedName": "SWOT Analysis(1).pdf",
+      "sha256": "e0531c0e099cbf6e14b9da6cc6157514fa8009730af4caaa98dd310213f3cfa9",
+      "pdfPages": 2,
+      "authority": "SECONDARY_NOT_FOR_METROLOGY_LOGIC"
+    },
+    {
+      "id": "research",
+      "uploadedName": "26035 research(1).pdf",
+      "sha256": "56717bd033ca48f2ee7c963ef232d5eb1ab75c9da60401318212160d9df335a0",
+      "pdfPages": 12,
+      "authority": "SECONDARY_NOT_FOR_METROLOGY_LOGIC"
+    },
+    {
+      "id": "r76-2",
+      "uploadedName": "r076-2-e07(1).pdf",
+      "path": "docs/reference/r076-2-e07.pdf",
+      "sha256": "650b8ea9b1001499574f585f0eab0a097ba290118da312b6a05a17bc856a3820",
+      "pdfPages": 62,
+      "authority": "PRIMARY_SUPPLIED_DOCUMENT"
+    },
+    {
+      "id": "problem-statement",
+      "uploadedName": "26035(1).pdf",
+      "path": "docs/reference/SIH26035.pdf",
+      "sha256": "485bde9094da0b7d97e7da1b2b3201e071bc4318be34291bc990ebcaba7e807e",
+      "pdfPages": 2,
+      "authority": "PRIMARY_SUPPLIED_DOCUMENT"
+    }
+  ]
+}

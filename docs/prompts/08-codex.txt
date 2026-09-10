@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 8: Early deployment and PDF smoke spike
+ALLOWED PATHS: src/app/api/health/pdf/route.ts; src/server/reports/health-pdf.tsx
+TASK: Create an authenticated DEMO_MODE-only Node-runtime PDF smoke endpoint that renders a one-page Infrastructure Test with @react-pdf/renderer renderToBuffer. No legal/report claims and no real app data. No Chromium dependency. Return PDF only for this small spike. Document the observed deployment URL and checks; never fabricate the URL.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Test Vercel/Auth/PDF compatibility before building all features.
+ACCEPTANCE: Open login and protected dashboard on preview; download smoke PDF on Vercel and inspect it.
+STOP CONDITION: Auth works on Vercel; PDF opens remotely; dependency lock stays stable.

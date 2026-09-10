@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 0: Document analysis
+ALLOWED PATHS: docs/reference/*; docs/source-manifest.json; docs/rule-registry.json; docs/test-catalogue.json
+TASK: Verify the references and scope, not every unsupported test formula. Record corrections in docs/source-review.md only. Cross-check Table 3 p27, Table 6 p30, A.4.4 pp88-89, A.4.7 pp90-91, A.4.10 p93, and R76-2 pp4-10,12,16,48-49. Explain type evaluation vs verification repetition counts, and report approval vs model approval.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Freeze the source set and a defensible test scope.
+ACCEPTANCE: Hash equality; required thresholds/counts and formulas match the cited printed pages.
+STOP CONDITION: Registry complete for the three scoped tests; unsupported/legal details visibly unverified.

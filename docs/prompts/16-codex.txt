@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 16: Completion and test summary
+ALLOWED PATHS: src/server/workflow/completion.ts; src/server/actions/tests.ts; src/features/results/*; src/app/(lab)/instruments/[id]/results/page.tsx; supabase/migrations/202609090008_completion.sql; tests/integration/completion.test.ts
+TASK: Implement Complete Test and Ready for Review commands, current-attempt/result selection and result summary UI. A valid FAIL is complete; invalid/missing/unverified required data blocks submission. Do not erase failed attempts when retesting. Selected-test completion 3/3 is separate from full-standard coverage. Whole-instrument conformity remains NOT_DETERMINED.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Finish selected tests and readiness checks.
+ACCEPTANCE: An incomplete test cannot complete; failed test can complete accurately; retest preserves original; summary matches current saved results.
+STOP CONDITION: Summary reflects real selected-test completion and explicit partial coverage.

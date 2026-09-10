@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 22: Repository, audit and route completion
+ALLOWED PATHS: src/features/reports/components/*; src/features/audit/components/*; src/app/(lab)/reports/*; src/app/(lab)/audit/*; src/components/layout/*
+TASK: Build searchable report repository by report number, model and date; report detail with immutable versions and authorized download. Build audit timeline that shows create/edit/calculation/submit/correction/approve/issue actors and timestamps. Tester sees assigned evaluation history only; officers/admin see their authorized lab history. No public bucket URLs or direct audit edit control. Admin page is not required in P0.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Finish the navigable end-to-end application.
+ACCEPTANCE: Report found after refresh/search; v1/v2/final remain distinct; timeline shows original and changed demo input.
+STOP CONDITION: All P0 routes work and contain genuine persisted records.

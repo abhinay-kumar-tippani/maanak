@@ -1,0 +1,290 @@
+{
+  "source": "R76-2 table of contents p2, summary p9, checklist notes p49",
+  "note": "Catalogue headings and locations, not verification of every unimplemented test procedure. NOT_IMPLEMENTED is not NOT_APPLICABLE. Weighing-temperature repetitions remain unimplemented.",
+  "items": [
+    {
+      "form": "1",
+      "name": "Weighing performance",
+      "pdfPages": [
+        10
+      ],
+      "mvpStatus": "INITIAL_BASELINE_ONLY",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "2",
+      "name": "Temperature effect on no-load indication",
+      "pdfPages": [
+        11
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "3.1",
+      "name": "Eccentricity using weights",
+      "pdfPages": [
+        12
+      ],
+      "mvpStatus": "SCOPED_IMPLEMENTATION_PLANNED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "3.2",
+      "name": "Eccentricity using rolling load",
+      "pdfPages": [
+        13
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "4.1",
+      "name": "Discrimination",
+      "pdfPages": [
+        14
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "4.2",
+      "name": "Sensitivity, non-self-indicating",
+      "pdfPages": [
+        15
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "5",
+      "name": "Repeatability",
+      "pdfPages": [
+        16
+      ],
+      "mvpStatus": "SCOPED_IMPLEMENTATION_PLANNED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "6.1",
+      "name": "Zero return",
+      "pdfPages": [
+        17
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "6.2",
+      "name": "Creep",
+      "pdfPages": [
+        18
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "7",
+      "name": "Stability of equilibrium",
+      "pdfPages": [
+        19
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "8",
+      "name": "Tilting",
+      "pdfPages": [
+        20
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "9",
+      "name": "Tare weighing test",
+      "pdfPages": [
+        21
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "10",
+      "name": "Warm-up time",
+      "pdfPages": [
+        22
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "11",
+      "name": "Voltage variations",
+      "pdfPages": [
+        23
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "12.1",
+      "name": "AC dips and short interruptions",
+      "pdfPages": [
+        24
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "12.2",
+      "name": "Electrical bursts",
+      "pdfPages": [
+        25,
+        26
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "12.3",
+      "name": "Surges",
+      "pdfPages": [
+        27,
+        28
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "12.4",
+      "name": "Electrostatic discharges",
+      "pdfPages": [
+        29,
+        30,
+        31
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "12.5",
+      "name": "Radiated electromagnetic fields",
+      "pdfPages": [
+        32,
+        33
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "12.6",
+      "name": "Conducted radio-frequency fields",
+      "pdfPages": [
+        34
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "12.7",
+      "name": "Road vehicle power supply transients",
+      "pdfPages": [
+        35,
+        36
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "13",
+      "name": "Damp heat, steady state",
+      "pdfPages": [
+        37,
+        38,
+        39
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "14",
+      "name": "Span stability",
+      "pdfPages": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "15",
+      "name": "Endurance",
+      "pdfPages": [
+        46,
+        47
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "16",
+      "name": "Construction examination",
+      "pdfPages": [
+        48
+      ],
+      "mvpStatus": "MANUAL_PARTIAL_P0",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "17.1",
+      "name": "General checklist",
+      "pdfPages": [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "17.2",
+      "name": "Direct sales/price computing/labeling",
+      "pdfPages": [
+        57,
+        58,
+        59
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "17.3",
+      "name": "Electronic instruments checklist",
+      "pdfPages": [
+        60
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    },
+    {
+      "form": "17.4",
+      "name": "Software-controlled devices checklist",
+      "pdfPages": [
+        61,
+        62
+      ],
+      "mvpStatus": "NOT_IMPLEMENTED",
+      "applicability": "UNRESOLVED_UNTIL_PROFILE_REVIEW"
+    }
+  ]
+}

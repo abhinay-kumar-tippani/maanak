@@ -1,0 +1,12 @@
+Read docs/AI_WORK_RULES.md, docs/master-blueprint.md, docs/security-contract.md, docs/rule-registry.json, and src/contracts/domain.ts first. Preserve existing generated AGENTS.md instructions and the installed Next.js major version.
+Change only the allowed paths below. Do not modify other files, standards PDFs, source hashes, fixtures, formulas, types, auth, migrations, or package versions unless explicitly allowed. If a dependency or interface change is genuinely required, explain the exact reason and affected files before that change; do not silently rewrite the repository. Never weaken RLS, omit version checks, manufacture successful results, trust browser PASS/FAIL, or use an LLM for runtime compliance.
+Use the existing ActionResult<T> and domain DTOs. Raw numeric metrology inputs travel as decimal strings with explicit units. Use Zod at boundaries and Decimal arithmetic in pure rule code. Never put privileged clients or runtime calculators in a client module. No source means NOT VERIFIED FROM PROVIDED AUTHORITATIVE SOURCE and no automated decision.
+After editing, list changed files, explain the data path, run the stage-specific checks and report actual output. Do not claim a check was run when it was not. No git push, deployment, role change, destructive migration, or account message unless the current stage explicitly instructs it. Do not add a guessed helper that bypasses a missing prerequisite.
+
+STAGE 13: Pure calculation framework
+ALLOWED PATHS: src/domain/oiml/calculators/*; src/domain/oiml/rules/*; src/domain/oiml/references/*; tests/domain/calculators.test.ts; src/server/evaluation/engine.ts
+TASK: Implement only verified scoped class validation, scale interval format, class III MPE and changeover/zero correction primitives. Use Decimal string input/output. Unit cases must include both error signs, exact MPE boundaries, immediately above band boundaries, official p89 example, missing deltaL, invalid unit and unsupported profile. Runtime wrapper imports server-only. No Date.now or DB inside pure functions.
+INPUTS: The referenced source PDFs, verified registry, current repository and relevant existing DTOs/actions. Use only data available at this stage.
+OUTPUTS: Implement reusable Decimal arithmetic and trace output.
+ACCEPTANCE: All golden arithmetic cases pass; rounding does not alter decisions; empty strings do not become 0.
+STOP CONDITION: Primitives and trace references independently tested before UI connection.

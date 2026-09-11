@@ -8,7 +8,6 @@ import {
   Calendar,
   User,
   ArrowLeft,
-  Lock,
   FileText,
   FileSpreadsheet,
 } from "lucide-react";
@@ -227,31 +226,25 @@ export function InstrumentDetailView({ instrument }: InstrumentDetailViewProps) 
               </div>
             </div>
 
-            {/* Next Workflow Step Notice - strictly no dead links to uncreated pages */}
+            {/* Next workflow actions */}
             <div className="mt-6 pt-4 border-t border-slate-200">
               <span className="text-xs font-semibold text-slate-700 block mb-2">
                 Next Workflow Step
               </span>
-              <div
-                aria-disabled="true"
-                className="p-3.5 rounded-md border border-slate-200 bg-slate-50 text-slate-600 flex items-start gap-2.5 cursor-not-allowed select-none"
-              >
+              <Link href={`/instruments/${instrument.id}/specifications?evaluation=${latestEvaluation?.id??""}`} className="p-3.5 rounded-md border border-slate-200 bg-slate-50 text-slate-600 flex items-start gap-2.5 hover:border-teal-500">
                 <FileSpreadsheet className="h-4 w-4 text-slate-400 shrink-0 mt-0.5" aria-hidden="true" />
                 <div className="text-xs">
                   <div className="flex items-center gap-2">
                     <span className="font-semibold text-slate-800">
                       Technical Specifications Intake
                     </span>
-                    <span className="inline-flex items-center gap-1 text-[10px] uppercase font-mono px-1.5 py-0.2 rounded bg-slate-200 text-slate-600 border border-slate-300">
-                      <Lock className="h-2.5 w-2.5" aria-hidden="true" />
-                      Stage 2
-                    </span>
                   </div>
                   <p className="mt-1 text-[11px] text-slate-500 leading-tight">
-                    Specification characteristics, capacity, and accuracy class definition will be enabled in the next stage.
+                    Review or save the versioned declared characteristics.
                   </p>
                 </div>
-              </div>
+              </Link>
+              <Link href={`/instruments/${instrument.id}/plan?evaluation=${latestEvaluation?.id??""}`} className="mt-2 flex items-start gap-2.5 rounded-md border border-slate-200 bg-slate-50 p-3.5 text-slate-600 hover:border-teal-500"><FileSpreadsheet className="h-4 w-4 shrink-0 text-[#176B67]"/><div className="text-xs"><span className="font-semibold text-slate-800">Selected test plan and observations</span><p className="mt-1 text-[11px] text-slate-500">Create the plan, enter raw readings, calculate and submit.</p></div></Link>
             </div>
           </section>
 
@@ -269,4 +262,3 @@ export function InstrumentDetailView({ instrument }: InstrumentDetailViewProps) 
     </div>
   );
 }
-

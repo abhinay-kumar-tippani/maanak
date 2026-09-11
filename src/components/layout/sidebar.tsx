@@ -8,7 +8,6 @@ import {
   ShieldCheck,
   FileText,
   History,
-  Lock,
 } from "lucide-react";
 
 export function Sidebar() {
@@ -16,6 +15,8 @@ export function Sidebar() {
 
   const isDashboard = pathname === "/dashboard";
   const isInstruments = pathname.startsWith("/instruments");
+  const isApprovals = pathname.startsWith("/approvals");
+  const isReports = pathname.startsWith("/reports");
 
   return (
     <aside className="w-64 bg-[#183153] text-white flex flex-col shrink-0 border-r border-slate-800">
@@ -64,35 +65,19 @@ export function Sidebar() {
           <span>Instruments</span>
         </Link>
 
-        {/* 3. Approvals (Inactive - route not yet implemented) */}
-        <div
-          aria-disabled="true"
-          className="flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium text-slate-400 opacity-60 cursor-not-allowed select-none"
-        >
+        <Link href="/approvals" className={`flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium ${isApprovals?"bg-[#176B67] text-white":"text-slate-300 hover:bg-slate-800/60"}`}>
           <div className="flex items-center gap-3">
             <ShieldCheck className="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
             <span>Approvals</span>
           </div>
-          <span className="flex items-center gap-1 text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
-            <Lock className="h-2.5 w-2.5" aria-hidden="true" />
-            Next
-          </span>
-        </div>
+        </Link>
 
-        {/* 4. Reports (Inactive - route not yet implemented) */}
-        <div
-          aria-disabled="true"
-          className="flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium text-slate-400 opacity-60 cursor-not-allowed select-none"
-        >
+        <Link href="/reports" className={`flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium ${isReports?"bg-[#176B67] text-white":"text-slate-300 hover:bg-slate-800/60"}`}>
           <div className="flex items-center gap-3">
             <FileText className="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
             <span>Reports</span>
           </div>
-          <span className="flex items-center gap-1 text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
-            <Lock className="h-2.5 w-2.5" aria-hidden="true" />
-            Next
-          </span>
-        </div>
+        </Link>
 
         {/* 5. Audit Trail (Inactive - route not yet implemented) */}
         <div
@@ -104,7 +89,6 @@ export function Sidebar() {
             <span>Audit Trail</span>
           </div>
           <span className="flex items-center gap-1 text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
-            <Lock className="h-2.5 w-2.5" aria-hidden="true" />
             Next
           </span>
         </div>

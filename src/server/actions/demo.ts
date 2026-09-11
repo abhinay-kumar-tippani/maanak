@@ -1,0 +1,1 @@
+"use server";import{revalidatePath}from"next/cache";import{loadFictionalDemoReadings}from"@/server/demo/load";export async function loadDemoReadings(input:{evaluationId:string;expectedEvaluationVersion:number}){const r=await loadFictionalDemoReadings(input.evaluationId,input.expectedEvaluationVersion);if(r.ok)revalidatePath("/instruments");return r;}

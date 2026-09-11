@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "CommonJS", "moduleResolution": "Node",
+    "esModuleInterop": true, "strict": true, "skipLibCheck": true,
+    "resolveJsonModule": true, "types": ["node"], "rootDir": ".",
+    "outDir": ".next/plan-tests", "noEmitOnError": true, "incremental": false
+  },
+  "include": ["tests/domain/**/*.test.ts", "tests/security/**/*.test.ts", "src/domain/oiml/definitions/**/*.ts", "src/domain/oiml/plans/**/*.ts", "src/domain/oiml/schemas/**/*.ts", "src/domain/oiml/evaluators/**/*.ts"],
+  "exclude": ["node_modules", ".next"]
+}

@@ -132,6 +132,7 @@ export interface EvaluateTestInput {
 }
 export interface ReportSnapshot {
   schemaVersion: '1';
+  evaluationId: string;
   reportId: string;
   reportNumber: string;
   versionNo: number;
@@ -143,6 +144,7 @@ export interface ReportSnapshot {
   manufacturer: { name: string; address: string };
   instrument: { designation: string; sampleIdentifier: string; serialNumber: string | null };
   specifications: InstrumentSpecifications;
+  manualIntake?: Record<string, unknown>;
   testData: { observations: Observations; evaluation: EvaluationEnvelope }[];
   coverage: { code: string; status: Coverage; explanation: string; references: SourceReference[] }[];
   testEquipment: Record<string, unknown>[];

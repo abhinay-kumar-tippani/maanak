@@ -213,7 +213,7 @@ export function SpecificationForm({ evaluationId, expectedRowVersion, currentRev
         </div>
       </Section>
       <Section title="3 · Declared operating temperature">
-        <p className="text-sm text-slate-600">Record the manufacturer's declared range in °C. This does not confirm conditions during physical testing.</p>
+        <p className="text-sm text-slate-600">Record the manufacturer&apos;s declared range in °C. This does not confirm conditions during physical testing.</p>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">{decimalFields.slice(6).map(([key, label]) => decimalField(key, label))}</div>
       </Section>
       <Section title="4 · Manual intake confirmations">

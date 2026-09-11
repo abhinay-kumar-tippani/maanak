@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:plan": "node scripts/test-plan.mjs",
+    "test:domain": "node scripts/test-plan.mjs"
   },
   "dependencies": {
     "@react-pdf/renderer": "4.9.0",

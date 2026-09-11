@@ -7,8 +7,26 @@ import { createClient } from "@supabase/supabase-js";
 import { AuthorizationError, requireActor, requireRole, type Actor } from "@/server/auth/authorize";
 import { instrumentRegistrationSchema } from "@/server/instruments/validation";
 import { saveSpecificationInputSchema } from "@/server/specifications/validation";
+import type { SavedTestPlan, SelectedTestPlan } from "@/contracts/plans";
+import { parseSavedPlan, rowVersionSchema } from "@/server/plans/dto";
+import { mapPlanError } from "@/server/plans/errors";
 
-function createPrivilegedSupabaseClient() {
+// Named plan command only; the caller supplies a verified actor and a server-generated plan.
+export async function createPlanCommand(actor: Actor, evaluationId: string, expectedRowVersion: number, plan: SelectedTestPlan): Promise<ActionResult<SavedTestPlan>> {
+  try {
+    const { data, error } = await createPrivilegedSupabaseClient().rpc("command_create_plan", {
+      p_actor_id: actor.id, p_evaluation_id: evaluationId, p_expected_row_version: expectedRowVersion,
+      p_specification_id: plan.specificationRevisionId, p_plan: plan,
+    });
+    if (error) return mapPlanError(error);
+    const payload: unknown = Array.isArray(data) && data.length === 1 ? data[0] : data;
+    if (!payload || typeof payload !== "object" || Array.isArray(payload)) throw new Error("INVALID_PLAN_RESPONSE");
+    const row = payload as Record<string, unknown>;
+    return { ok: true, data: parseSavedPlan(row), version: rowVersionSchema.parse(row.rowVersion) };
+  } catch (error) { return mapPlanError(error); }
+}
+
+export function createPrivilegedSupabaseClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const secretKey = process.env.SUPABASE_SECRET_KEY;
   if (!url || !secretKey) throw new Error("Privileged Supabase configuration is unavailable.");
@@ -33,6 +51,7 @@ export type CommandName =
   | "command_fail_artifact"
   | "command_reserve_attachment"
   | "command_finish_attachment"
+  | "command_fail_attachment"
   | "command_archive";
 
 function logSafeRegistrationDatabaseError(error: unknown) {
@@ -59,15 +78,23 @@ export function mapCommandError(error: unknown): Extract<ActionResult<never>, { 
     : normalized.includes("VALIDATION") ? "VALIDATION_ERROR"
       : normalized.includes("STALE") ? "STALE_DATA"
         : normalized.includes("PERMISSION") || normalized.includes("ROLE") || normalized.includes("AUTH") || normalized.includes("ASSIGNMENT") || normalized.includes("CROSS_LABORATORY") ? "PERMISSION_DENIED"
-          : normalized.includes("LOCKED") || normalized.includes("STATE") || normalized.includes("FINALIZED") ? "INVALID_STATE"
-            : "REGISTRATION_FAILED";
+          : normalized.includes("LOCKED") || normalized.includes("STATE") || normalized.includes("FINALIZED") || normalized.includes("INCOMPLETE") || normalized.includes("RETEST") ? "INVALID_STATE"
+            : normalized.includes("COMMENT_REQUIRED") ? "COMMENT_REQUIRED"
+              : normalized.includes("PENDING_EVIDENCE") ? "PENDING_EVIDENCE"
+                : normalized.includes("ATTACHMENT") ? "INVALID_ATTACHMENT"
+                  : normalized.includes("RESULT") ? "RESULT_FAILED"
+                    : "COMMAND_FAILED";
   const messages: Record<string, string> = {
     DUPLICATE_SAMPLE: "That sample identifier is already registered in this laboratory.",
-    VALIDATION_ERROR: "The registration details are invalid.",
-    PERMISSION_DENIED: "You are not permitted to register an instrument.",
+    VALIDATION_ERROR: "The submitted values are invalid.",
+    PERMISSION_DENIED: "You are not permitted to perform this operation.",
     STALE_DATA: "The record changed before this operation completed.",
     INVALID_STATE: "The operation is not valid for the current record state.",
-    REGISTRATION_FAILED: "The instrument registration could not be completed.",
+    COMMENT_REQUIRED: "A review comment is required for this decision.",
+    PENDING_EVIDENCE: "Evidence is still uploading. Finish or retry it before submission.",
+    INVALID_ATTACHMENT: "The evidence file or upload reservation is invalid.",
+    RESULT_FAILED: "The calculation result could not be saved.",
+    COMMAND_FAILED: "The operation could not be completed.",
   };
   return { ok: false, error: { code, message: messages[code] } };
 }
@@ -111,7 +138,7 @@ export async function registerInstrumentCommand(input: unknown): Promise<ActionR
   }
   try {
     const actor = requireRole(await requireActor(), "TESTER");
-    return await invokeCommand<RegistrationResult>(actor, "command_register_instrument", {
+    const result = await invokeCommand<RegistrationResult>(actor, "command_register_instrument", {
       p_manufacturer_name: parsed.data.manufacturerName,
       p_manufacturer_address: parsed.data.manufacturerAddress,
       p_applicant_name: parsed.data.applicantName,
@@ -123,6 +150,10 @@ export async function registerInstrumentCommand(input: unknown): Promise<ActionR
       p_serial_number: parsed.data.serialNumber,
       p_assigned_tester_id: parsed.data.assignedTesterId,
     });
+    if (!result.ok && result.error.code === "COMMAND_FAILED") {
+      return { ok: false, error: { code: "REGISTRATION_FAILED", message: "The instrument registration could not be completed." } };
+    }
+    return result;
   } catch (error) {
     if (error instanceof AuthorizationError) {
       return { ok: false, error: { code: "PERMISSION_DENIED", message: error.message } };
@@ -160,7 +191,7 @@ export async function saveSpecificationCommand(input: unknown): Promise<ActionRe
     if (!result.ok && result.error.code === "INVALID_STATE") {
       return { ok: false, error: { code: "SPECIFICATION_LOCKED", message: "This evaluation cannot be edited in its current state." } };
     }
-    if (!result.ok && result.error.code === "REGISTRATION_FAILED") {
+    if (!result.ok && result.error.code === "COMMAND_FAILED") {
       return { ok: false, error: { code: "SPECIFICATION_FAILED", message: "The specification revision could not be saved." } };
     }
     return result;
